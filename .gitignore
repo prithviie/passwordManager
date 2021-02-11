@@ -1,0 +1,8 @@
+pwman.cbp
+pwman.depend
+pwman.layout
+sqlite3.c
+sqlite3.h
+bin/
+obj/
+preliminary_operations_on_sqlite.cpp
