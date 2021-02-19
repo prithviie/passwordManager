@@ -6,3 +6,5 @@ sqlite3.h
 bin/
 obj/
 preliminary_operations_on_sqlite.cpp
+.gitignore
+.idea/
