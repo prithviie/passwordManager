@@ -29,24 +29,15 @@ def open_file():
             content TEXT NOT NULL
         );''')
 
-        # for README file
-        create_readme_file()
         return True
 
     else:
         return False
 
 
-def create_readme_file():
-    '''Creates a README file in the folder'''
-    with open(rfile, 'w+') as fh:
-        fh.write("This folder is created to save your passwords.\n"
-                 "Do not tamper with the files in this folder or else you could lose your passwords.\n")
-
-
 def clear():
     ''' to clear the terminal screen'''
-    g = os.system('cls')
+    os.system('cls')
 
 
 def encrypt(text):
@@ -90,7 +81,7 @@ def decrypt(text):
     text = str(text)
 
     def get_ascii_value_from_part(part):
-        '''private method for decryption method
+        '''function for decryption method
         returns the ascii value of string from from characters'''
         key = 15
         rval1 = 7
@@ -410,6 +401,7 @@ def enter_master_pw():
 def prompt_options():
     '''Prompting the user to choose any options in the pw manager,
      accordingly this function calls another function to complete the tasks'''
+
     print()
     print('********************** Choose any *************************')
     print("1. Add service:                                  1 or a")
@@ -497,7 +489,6 @@ def main():
         if proceed:
             while True:
                 wait = prompt_options()
-                # send_mail_initiate()
                 if wait:
                     sleep(1.5)
 
@@ -510,8 +501,7 @@ def main():
             continue
 
 
-path = './Pass/'
+path = './Passes/'
 dbfile = path + '/queries.sqlite'
-rfile = path + '/README.txt'
 
 main()
